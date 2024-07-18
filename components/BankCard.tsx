@@ -39,7 +39,7 @@ const BankCard = ({account, userName, showBalance=true}:CreditCardProps ) => {
                     width={45}
                     height={32}
                     alt="mastercard"
-                    className="ml-5"
+                    className="ml-10"
                 />
             </div>
 
