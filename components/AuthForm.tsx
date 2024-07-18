@@ -16,6 +16,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import CustomInput from './CustomInput';
+import { authFormSchema } from '@/lib/utils';
 
 
 
@@ -27,15 +29,16 @@ const formSchema = z.object({
 const AuthForm = ({type}: {type: string}) => {
     const [user, setUser] = useState(null);
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof authFormSchema>>({
+        resolver: zodResolver(authFormSchema),
         defaultValues: {
           email: "",
+          password: ""
         },
       })
      
         // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    function onSubmit(values: z.infer<typeof authFormSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
@@ -70,30 +73,14 @@ const AuthForm = ({type}: {type: string}) => {
             <>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                        <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <div className='form-item'>
-                                <FormLabel className='form-label'>
-                                    Email
-                                </FormLabel>
-                                <div className="flex w-full">
-                                    <FormControl>
-                                        <Input 
-                                            placeholder='Enter your email'
-                                            className='input-class'
-                                            // spread the properties
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage 
-                                        className='form-mesage mt-2'
-                                    />
-                                </div>
-                            </div>
-                        )}
+                        <CustomInput 
+                            control={form.control} name='email' label='Email' placeholder='Enter your email'
                         />
+
+                        <CustomInput 
+                            control={form.control} name='password' label='Password' placeholder='Enter your password'
+                        />
+
                         <Button type="submit">Submit</Button>
                     </form>
                 </Form>
