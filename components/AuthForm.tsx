@@ -21,7 +21,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import SignUp from '@/app/(auth)/sign-up/page';
 import { useRouter } from 'next/navigation';
-import { signIn, signUp } from '@/lib/actions/user.actions';
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
 
 
 
@@ -51,6 +51,7 @@ const AuthForm = ({type}: {type: string}) => {
             // sign up with appwite and create plaid link
             if(type === 'sign-up'){
                 const newUser = await signUp(data);
+
                 setUser(newUser);
             }
             if (type === 'sign-in') {
