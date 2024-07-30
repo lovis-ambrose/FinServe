@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BankTabItem } from './BankTabItem'
 import BankInfo from './BankInfo'
+import TransactionsTable from './TransactionsTable'
 
 const RecentTransactions = ({accounts, transactions=[], appwriteItemId, page=1}: RecentTransactionsProps) => {
   return (
@@ -43,14 +44,14 @@ const RecentTransactions = ({accounts, transactions=[], appwriteItemId, page=1}:
               type="full"
             />
 
-            <TransactionsTable transactions={currentTransactions} />
+            {/* <TransactionsTable transactions={currentTransactions} />
             
 
             {totalPages > 1 && (
               <div className="my-4 w-full">
                 <Pagination totalPages={totalPages} page={page} />
               </div>
-            )}
+            )} */}
           </TabsContent>
         ))}
       </Tabs>
