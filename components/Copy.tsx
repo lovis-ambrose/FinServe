@@ -6,6 +6,8 @@ import { Button } from "./ui/button";
 const Copy = ({ title }: { title: string }) => {
   const [hasCopied, setHasCopied] = useState(false);
 
+  console.log({title})
+  
   const copyToClipboard = () => {
     navigator.clipboard.writeText(title);
     setHasCopied(true);
@@ -23,7 +25,7 @@ const Copy = ({ title }: { title: string }) => {
       onClick={copyToClipboard}
     >
       <p className="line-clamp-1 w-full max-w-full text-xs font-medium text-black-2">
-        {title} test
+        {title}
       </p>
 
       {!hasCopied ? (
