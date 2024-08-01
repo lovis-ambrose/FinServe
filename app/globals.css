@@ -159,7 +159,7 @@
   }
 
   .profile-banner {
-    @apply h-[50px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -167,11 +167,11 @@
   }
 
   .profile-img {
-    @apply flex-center absolute -top-8 size-20 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
+    @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
   }
 
   .profile-details {
-    @apply flex flex-col pt-14;
+    @apply flex flex-col pt-24;
   }
 
   .profile-name {
@@ -357,10 +357,6 @@
 
   .footer_image {
     @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
-  }
-
-  .footer_image-mobile {
-    @apply relative size-5;
   }
 
   /* Sidebar */
