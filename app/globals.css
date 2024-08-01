@@ -159,7 +159,7 @@
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+    @apply h-[50px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
 
   .profile {
